@@ -120,4 +120,16 @@
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
         autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
+
+    <!-- Desktop mode (Android 16 desktop windowing). LineageOS enables this in its common
+         overlay, keep it here so the tablet gets desktop mode on any ROM building this tree. -->
+    <bool name="config_isDesktopModeSupported">true</bool>
+
+    <!-- Expose the "Desktop mode" toggle in Developer options, the only way to switch
+         into desktop mode on a device without an external display. -->
+    <bool name="config_isDesktopModeDevOptionSupported">true</bool>
+
+    <!-- The built-in display of a tablet must be able to host desktop sessions, otherwise
+         desktop mode is limited to secondary displays (which clover does not have). -->
+    <bool name="config_canInternalDisplayHostDesktops">true</bool>
 </resources>
