@@ -30,6 +30,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
     $(DEVICE_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
+# Camera
+# The stock camera.sdm660.so is linked against the Android 8.1 libui/libutils ABI
+PRODUCT_PACKAGES += \
+    libcamera_sdm660_shim
+
 # Control groups and task profiles
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
@@ -43,7 +48,8 @@ BOARD_HAVE_QCOM_FM := false
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-lineage
 
 # Power
 $(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchscreen/enable_dt2w)
