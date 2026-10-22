@@ -1,10 +1,10 @@
-# LineageOS device tree for the Xiaomi Mi Pad 4 / Mi Pad 4 Plus
+# PixelOS 16 device tree for the Xiaomi Mi Pad 4 / Mi Pad 4 Plus
 
 The Xiaomi Mi Pad 4 and Mi Pad 4 Plus (codenamed _"clover"_) are tablets released by
 Xiaomi in June 2018. Both sizes share the same SDM660 platform and are built from this
 single device tree.
 
-This tree targets **LineageOS 23.2** (Android 16).
+This tree targets **PixelOS 16** (Android 16) and produces the `aosp_clover` product.
 
 ## Device specifications
 
@@ -29,16 +29,18 @@ This tree targets **LineageOS 23.2** (Android 16).
 * `hardware/xiaomi`
 * `vendor/xiaomi/clover`
 
-`lineage.dependencies` lists the repositories that are needed on top of a plain
-LineageOS checkout.
+`lineage.dependencies` (metadata only, PixelOS does not ship roomservice) lists the
+repositories that are needed on top of a plain PixelOS checkout.
 
 ## Building
 
 ```sh
 . build/envsetup.sh
-breakfast clover
-mka bacon
+brunch clover
 ```
+
+`brunch clover` expands to `lunch aosp_clover-$aosp_target_release-userdebug` followed by
+`mka bacon`, and the resulting package is written to `out/target/product/clover/`.
 
 ## Device picture
 
