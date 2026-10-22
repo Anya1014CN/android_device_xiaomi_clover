@@ -29,8 +29,7 @@ This tree targets **PixelOS 16** (Android 16) and produces the `aosp_clover` pro
 * `hardware/xiaomi`
 * `vendor/xiaomi/clover`
 
-`lineage.dependencies` (metadata only, PixelOS does not ship roomservice) lists the
-repositories that are needed on top of a plain PixelOS checkout.
+The repositories above have to be present on top of a plain PixelOS checkout.
 
 ## Building
 

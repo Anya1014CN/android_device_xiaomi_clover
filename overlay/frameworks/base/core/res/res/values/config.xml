@@ -121,8 +121,8 @@
         autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
-    <!-- Desktop mode (Android 16 desktop windowing). LineageOS enables this in its common
-         overlay, keep it here so the tablet gets desktop mode on any ROM building this tree. -->
+    <!-- Desktop mode (Android 16 desktop windowing). Also enabled by the vendor overlay,
+         keep it here so the tablet gets desktop mode on any ROM building this tree. -->
     <bool name="config_isDesktopModeSupported">true</bool>
 
     <!-- Expose the "Desktop mode" toggle in Developer options, the only way to switch
